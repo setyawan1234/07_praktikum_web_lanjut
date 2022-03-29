@@ -24,8 +24,8 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         //melakukan validasi data
-        $request->validate([ 'Nim' => 'required', 'Nama' => 'required', 'Kelas' => 'required',
-        'Jurusan' => 'required', 'No_Handphone' => 'required',
+        $request->validate([ 'Nim' => 'required', 'Nama' => 'required','Email' => 'required',
+        'TanggalLahir' => 'required', 'Kelas' => 'required','Jurusan' => 'required', 'No_Handphone' => 'required',
         ]);
 
         //fungsi eloquent untuk menambah data
@@ -58,8 +58,8 @@ class MahasiswaController extends Controller
     public function update(Request $request, $Nim)
     {
         //melakukan validasi data
-        $request->validate([ 'Nim' => 'required', 'Nama' => 'required', 'Kelas' => 'required',
-        'Jurusan' => 'required', 'No_Handphone' => 'required',
+        $request->validate([ 'Nim' => 'required', 'Nama' => 'required','Email' => 'required',
+        'TanggalLahir' => 'required', 'Kelas' => 'required','Jurusan' => 'required', 'No_Handphone' => 'required',
         ]);
 
         //fungsi eloquent untuk mengupdate data inputan kita
