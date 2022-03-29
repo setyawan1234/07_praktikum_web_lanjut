@@ -41,6 +41,21 @@
                             <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone"
                                 aria-describedby="No_Handphone">
                         </div>
+
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+
+                            <input type="Email" name="Email" class="form-control" id="Email"
+                                aria-describedby="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="TanggalLahir">Tanggal Lahir</label>
+
+                            <input type="date" name="TanggalLahir" class="form-control" id="TanggalLahir"
+                                aria-describedby="TanggalLahir">
+                        </div>
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
