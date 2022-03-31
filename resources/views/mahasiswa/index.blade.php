@@ -17,6 +17,14 @@
     @endif
 
     <table class="table table-bordered">
+        <form class="form" method="get" action="{{ route('search') }}">
+            <div class="form-group w-100 mb-3">
+                <label for="search" class="d-block mr-2">Pencarian</label>
+                <input type="text" name="search" class="form-control w-75 d-inline" id="search"
+                    placeholder="Masukkan Keyword">
+                <button type="submit" class="btn btn-primary mb-1">Cari</button>
+            </div>
+        </form>
         <tr>
             <th>Nim</th>
             <th>Nama</th>
