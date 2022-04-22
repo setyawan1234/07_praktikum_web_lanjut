@@ -17,17 +17,17 @@
     @endif
 
     <table class="table table-bordered">
-        <form class="form" method="get" action="{{ route('search') }}">
-            <div class="form-group w-100 mb-3">
-                <label for="search" class="d-block mr-2">Pencarian</label>
-                <input type="text" name="search" class="form-control w-75 d-inline" id="search"
-                    placeholder="Masukkan Keyword">
-                <button type="submit" class="btn btn-primary mb-1">Cari</button>
+        <form action="/mahasiswa">
+            <div class="input-group mb-3 mt-3">
+                <input type="text" class="form-control" placeholder="Masukkan Nama Mahasiswa" name="search"
+                    value="{{ request('search') }}">
+                <button class="btn btn-outline-success" type="submit" id="button-addon2">Cari</button>
             </div>
         </form>
         <tr>
             <th>Nim</th>
             <th>Nama</th>
+            <th>Foto</th>
             <th>Kelas</th>
             <th>Jurusan</th>
             <th>No_Handphone</th>
@@ -40,22 +40,24 @@
 
                 <td>{{ $Mahasiswa->Nim }}</td>
                 <td>{{ $Mahasiswa->Nama }}</td>
+                <td><img src="{{ asset('storage/'.$Mahasiswa -> Foto) }}" alt="" height="150px" width="150px" class="rounded"style="object-fit: cover"></td>
                 <td>{{ $Mahasiswa->kelas->nama_kelas }}</td>
                 <td>{{ $Mahasiswa->Jurusan }}</td>
                 <td>{{ $Mahasiswa->No_Handphone }}</td>
                 <td>{{ $Mahasiswa->Email }}</td>
                 <td>{{ $Mahasiswa->TanggalLahir }}</td>
                 <td>
-                    <form action="{{ route('mahasiswa.destroy', $Mahasiswa->Nim) }}" method="POST">
+                    <form action=" {{ route('mahasiswa.destroy', $Mahasiswa->Nim) }}" method="POST">
 
                         <a class="btn btn-info" href="{{ route('mahasiswa.show', $Mahasiswa->Nim) }}">Show</a>
 
                         <a class="btn btn-primary" href="{{ route('mahasiswa.edit', $Mahasiswa->Nim) }}">Edit</a>
+                        <a class="btn btn-warning" href="/mahasiswa/nilai/{{ $Mahasiswa->Nim }}">Nilai</a>
                         @csrf
                         @method('DELETE')
 
                         <button type="submit" class="btn btn-danger">Delete</button>
-                        <a class="btn btn-warning" href="/mahasiswa/nilai/{{ $Mahasiswa->Nim }}">Nilai</a>
+                        
                     </form>
                 </td>
             </tr>

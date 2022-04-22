@@ -31,7 +31,6 @@
             </tr>
         @endforeach
     </table>
-    <div class="text-center">
-        <a href="{{ route('pdf', $mahasiswa->Nim) }}" class="btn btn-danger"> Cetak PDF</a>
-    </div>
 @endsection
+
+</html>
